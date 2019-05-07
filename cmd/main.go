@@ -85,6 +85,11 @@ func pathToUrlEnd(path string) (string, []fileDocInfo, error) {
 				mark = ""
 			}
 		}
+		if strings.Index(dataList[e], "protected") > -1 {
+			if strings.Index(dataList[e], "function") > -1 {
+				mark = ""
+			}
+		}
 		if strings.Index(dataList[e], "public") > -1 {
 			dataList[e] = strings.ReplaceAll(dataList[e], "public", "")
 			if strings.Index(dataList[e], "function") > -1 {
